@@ -10,6 +10,7 @@ router.use((req, res, next) => {
 })
 
 //testing api route coming from controller
+
 router.get('/test', test);
 
 export default router; 

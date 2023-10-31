@@ -12,7 +12,7 @@ export const signup = async (req, res, next) => {
         res.status(201).json('User added succesfully');
     } catch (error) {
         // res.status(500).json(error.message)
-        // next(error);
-        next(handleError(501, 'Another error message'));
+        next(error);
+        // next(handleError(501, 'Another error message'));
     }
 }

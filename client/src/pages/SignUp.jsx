@@ -38,7 +38,7 @@ export default function SignUp() {
         }
         setLoading(false);
         setError(null);
-        navigate('/')
+        navigate('/signup')
         console.log(data);
     }
     return (
@@ -51,12 +51,16 @@ export default function SignUp() {
                     className="p-3 border rounded-lg" />
                 <input onChange={handleChange} type="password" name="password" id="password" placeholder="password"
                     className="p-3 border rounded-lg" />
+                <div className='flex justify-end mr-4 text-sm text-blue-800'>
+                    {/* FIXME: FONCTIONALITY NOT ADDED YET */}
+                    <Link to="/recover">forgot your password?</Link>
+                </div>
                 <button
                     disabled={loading}
                     className="p-3 text-white uppercase rounded-lg bg-slate-700 hover:opacity-90 disabled:opacity-80" type="submit"
                 >{loading ? 'Loading' : 'Sign up'}</button>
             </form>
-            <div className='flex gap-2 mt-3 ml-4'>
+            <div className='flex gap-2 mt-3 ml-4 text-sm'>
                 <p>have an acccount ?</p>
                 <Link to="/sign-in">
                     <span className='text-blue-800'>Sign in</span>

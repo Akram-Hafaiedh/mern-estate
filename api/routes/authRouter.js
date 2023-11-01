@@ -1,11 +1,11 @@
 import expres from 'express';
-import { signup } from '../controllers/singupController.js';
+import { signin, signup } from '../controllers/authController.js';
 
 const router = expres.Router();
 
 //middleware
 
-
+router.post('/signin', signin)
 
 router.post('/signup', signup);
 

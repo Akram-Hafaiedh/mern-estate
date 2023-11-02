@@ -45,8 +45,17 @@ export default function SignIn() {
         // setLoading(false);
         // setError(null);
         dispatch(signInSucces(data))
-        navigate('/')
         console.log(data);
+        // data = {
+        //         "_id": "65419fd1b2de474da8cd4ce3",
+        //         "username": "catig",
+        //         "email": "jonadityko@mailinator.com",
+        //         "password": "$2b$10$hEPVct6VPnu4O4mQ/dTyI.m6MKSwWpxi/8jFUyRdALPGJxQozkwpq",
+        //         "createdAt": "2023-11-01T00:46:09.093Z",
+        //         "updatedAt": "2023-11-01T00:46:09.093Z",
+        //         "__v": 0
+        //        }
+        navigate('/')
     }
     return (
         <div className="max-w-lg p-3 mx-auto">

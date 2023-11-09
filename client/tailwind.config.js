@@ -5,8 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateRows: {
+        48: 'repeat(48, minmax(0,1fr))',
+        24: 'repeat(24, minmax(0,1fr))',
+        12: 'repeat(12, minmax(0,1fr))',
+      }
+    },
   },
   plugins: [],
+  darkMode: 'class'
 }
 

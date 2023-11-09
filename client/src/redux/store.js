@@ -1,11 +1,13 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import userReducer from './features/user/userSlice'
+import darkModeReducer from './features/darkMode/darkModeSlice'
 import { persistReducer, persistStore } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 // import persistStore from 'redux-persist/es/persistStore'
 
 const rootReducer = combineReducers({
-    user: userReducer
+    darkMode: darkModeReducer,
+    user: userReducer,
 })
 
 const persistConfig = {

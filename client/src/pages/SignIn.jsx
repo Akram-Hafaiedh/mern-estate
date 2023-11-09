@@ -2,6 +2,17 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { signInStart, signInSucces, signInFailure } from '../redux/features/user/userSlice'
+// import OAuth from '../components/OAuth';
+// import Meta from '../components/Meta';
+import PrimaryButton from '../components/PrimaryButton';
+import { FaFacebookF, FaGithub, FaGoogle, FaTwitter } from 'react-icons/fa';
+
+
+
+import SignInButton from '../components/SignInButton';
+
+
+
 
 export default function SignIn() {
 
@@ -13,11 +24,10 @@ export default function SignIn() {
     const dispatch = useDispatch();
 
     function handleChange(e) {
-        setFormData(
-            {
-                ...formData,
-                [e.target.id]: e.target.value
-            })
+        setFormData({
+            ...formData,
+            [e.target.id]: e.target.value
+        })
     }
     async function handleSubmit(e) {
         e.preventDefault();
@@ -68,13 +78,32 @@ export default function SignIn() {
                 <input onChange={handleChange} type="password" name="password" id="password" placeholder="password"
                     className="p-3 border rounded-lg" />
                 <div className='flex justify-end mr-4 text-sm text-blue-800'>
-                    {/* FIXME: FONCTIONALITY NOT ADDED YET */}
                     <Link to={"/recover"}>forgot your password?</Link>
                 </div>
-                <button
+                <PrimaryButton className='px-4 py-3 font-semibold text-white bg-slate-700' processing={loading}>
+                    {loading ? 'Loading' : 'Sign in'}
+                </PrimaryButton>
+                {/* <button
                     disabled={loading}
                     className="p-3 text-white uppercase rounded-lg bg-slate-700 hover:opacity-90 disabled:opacity-80" type="submit"
-                >{loading ? 'Loading' : 'Sign in'}</button>
+                >{loading ? 'Loading' : 'Sign in'}</button> */}
+                {/* <OAuth /> */}
+                {/* <Meta /> */}
+                <div className='flex justify-center gap-3'>
+                    <SignInButton providerId="facebook"  >
+                        <FaFacebookF />
+                    </SignInButton>
+                    <SignInButton providerId="twitter"  >
+                        <FaTwitter />
+                    </SignInButton>
+                    <SignInButton providerId="google"  >
+                        <FaGoogle className='flex-shrink-0' />
+                    </SignInButton>
+                    <SignInButton providerId="github" >
+                        <FaGithub />
+                    </SignInButton>
+                </div>
+
             </form>
             <div className='flex gap-2 mt-3 ml-4 text-sm'>
                 <p>have an acccount ?</p>

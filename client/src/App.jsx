@@ -7,9 +7,14 @@ import SignUp from './pages/SignUp'
 import About from "./pages/About"
 import Profile from "./pages/Profile"
 import Header from "./components/Header"
+import Calendar from "./pages/Calendar"
+
 
 function App() {
   // const [count, setCount] = useState(0)
+
+
+
 
   return (
     <BrowserRouter>
@@ -20,7 +25,9 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/calendar" element={<Calendar />} />
       </Routes>
+
     </BrowserRouter>
   )
 }

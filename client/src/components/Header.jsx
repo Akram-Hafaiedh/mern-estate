@@ -1,14 +1,18 @@
-import { FaSearch } from 'react-icons/fa'
+import { FaCalendar, FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
+import DarkModeButton from './DarkModeButton';
+
+
 
 export default function Header() {
+
     return (
-        <header className="shadow-md bg-slate-200">
+        <header className="shadow-md bg-slate-200 dark:bg-slate-800">
             <div className="flex items-center justify-between max-w-6xl p-3 mx-auto">
                 <Link to="./">
                     <h1 className="flex flex-wrap text-sm font-bold sm:text-xl">
-                        <span className="text-slate-500">My</span>
-                        <span className="text-slate-700">Estate</span>
+                        <span className="text-slate-500 dark:text-white/70">My</span>
+                        <span className="text-slate-700 dark:text-white">Estate</span>
                     </h1>
                 </Link>
 
@@ -23,15 +27,19 @@ export default function Header() {
 
                     </label>
                 </form>
-                <ul className='flex gap-3'>
+                <ul className='flex items-center gap-3'>
+                    <DarkModeButton />
+                    <Link to="/calendar" className='p-3 bg-transparent rounded-full hover:bg-gray-600/10 dark:hover:bg-white/10'>
+                        <FaCalendar className='dark:text-white' />
+                    </Link>
                     <Link to="/">
-                        <li className='hidden hover:underline sm:inline'>Home</li>
+                        <li className='hidden hover:underline sm:inline dark:text-gray-100'>Home</li>
                     </Link>
                     <Link to="/about">
-                        <li className='hidden hover:underline sm:inline'>About</li>
+                        <li className='hidden hover:underline sm:inline dark:text-gray-100'>About</li>
                     </Link>
                     <Link to="/sign-in">
-                        <li className='hover:underline '>Sign In</li>
+                        <li className='hover:underline dark:text-gray-100'>Sign In</li>
                     </Link>
                 </ul>
             </div>
